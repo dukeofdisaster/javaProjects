@@ -65,7 +65,7 @@ public class TrainRoute {
 
     //Method 5.
     public Time getDeparture() {
-        return this.departure;
+        return departure;
 
     }
 

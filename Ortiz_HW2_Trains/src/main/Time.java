@@ -118,6 +118,15 @@ public class Time {
     public void addTime(Time x) {
         this.hour = x.getHour() + hour;
         this.minute = x.getMinute() + minute;
+
+        // 1.22.217-- Added if statement to check for case when minutes from
+        // added time and local time are > 60 and thus need to be altered to
+        // adjust the hour and minutes
+        if (this.minute > 60) {
+            this.hour += this.minute / 60;
+            int newMinute = this.minute % 60;
+            this.minute = newMinute;
+        }
     }
 
     // 8. cloning method
